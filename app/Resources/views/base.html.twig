@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Włóczęga.pl{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('CSS/styles.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ asset('img_theme/fontello/css/fontello.css') }}" type="text/css"/>
+        <link rel="icon" type="image/x-icon" href="{{ asset('img_theme/icon.ico') }}" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    </head>
+
+    <body>
+    {% block navBar0 %}
+    <nav class="navbar navbar-masthead navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{ path('homepage') }}">Strona główna</a></li>
+                    <li><a href="{{ path('about') }}">O nas</a></li>
+                    {% if is_granted('ROLE_USER') %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Moje konto <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            {% if is_granted('ROLE_ADMIN') %}<li><a href="#">Panel administracyjny</a></li>{% endif %}
+                            <li class="dropdown-header">Edycja kota</li>
+                            <li><a href="#">Zmień dane logowania</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{ path('fos_user_security_logout') }}">Wyloguj</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
+                    {% if not is_granted('ROLE_USER') %}<li><a href="{{ path('fos_user_security_login') }}">Zaloguj się</a></li>{% endif %}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ path('fos_user_registration_register') }}">Zarejestruj się</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><!--/.nav-collapse -->
+    {% endblock %}
+
+<!--             Slider - @views/home/index.html.twig               -->
+    {% block slider %}
+    
+    {% endblock %}
+<!--             Navbar sticky               -->
+
+    {% block navBar1 %}
+    <nav id="stickyNav" class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav myNavbar">
+                <li class="active dropbtn">Odzież
+                    <ul class="dropdown-content list-clear">
+                        <li class="dropdown-item"><a href="#">Spodnie</a></li>
+                        <li class="dropdown-item"><a href="#">Bluzy</a></li>
+                        <li class="dropdown-item"><a href="#">Kurtki</a></li>
+                        <li class="dropdown-item"><a href="#">Rękawice</a></li>
+                        <li class="dropdown-item"><a href="#">Nakrycia głowy</a></li>
+                    </ul>
+                </li>
+                <li class="dropbtn">Buty
+                    <ul class="dropdown-content list-clear">
+                        <li class="dropdown-item"><a href="#">Trekkingowe</a></li>
+                        <li class="dropdown-item"><a href="#">Tenisówki</a></li>
+                        <li class="dropdown-item"><a href="#">Zimowe</a></li>
+                    </ul>
+                </li>
+                <li class="dropbtn">Sprzęt biwakowy
+                    <ul class="dropdown-content list-clear">
+                        <li class="dropdown-item"><a href="#">Namioty</a></li>
+                        <li class="dropdown-item"><a href="#">Śpiwory</a></li>
+                        <li class="dropdown-item"><a href="#">Karimaty</a></li>
+                        <li class="dropdown-item"><a href="#">Śledzie namiotowe</a></li>
+                    </ul>
+                </li>
+                <li class="dropbtn">Plecaki
+                    <ul class="dropdown-content list-clear">
+                        <li class="dropdown-item"><a href="#">Jednodniowe</a></li>
+                        <li class="dropdown-item"><a href="#">Trzydniowe</a></li>
+                        <li class="dropdown-item"><a href="#">Wyprawowe</a></li>
+                        <li class="dropdown-item"><a href="#">Do 25 litrów</a></li>
+                    </ul>
+                </li>
+                <li class="dropbtn">Latarki
+                    <ul class="dropdown-content list-clear">
+                        <li class="dropdown-item"><a href="#">LED</a></li>
+                        <li class="dropdown-item"><a href="#">Czołowe</a></li>
+                        <li class="dropdown-item"><a href="#">Na rower</a></li>
+                        <li class="dropdown-item"><a href="#">Ratownicze</a></li>
+                        <li class="dropdown-item"><a href="#">Taktyczne</a></li>
+                        <li class="dropdown-item"><a href="#">Lampy</a></li>
+                    </ul>
+                </li>
+                <li class="dropbtn">Żywność
+                    <ul class="dropdown-content list-clear">
+                        <li class="dropdown-item"><a href="#">Zestawy duże</a></li>
+                        <li class="dropdown-item"><a href="#">Zestawy średnie</a></li>
+                        <li class="dropdown-item"><a href="#">Zestawy małe</a></li>
+                    </ul>
+                </li>
+                <li class="dropbtn">Akcesoria
+                    <ul class="dropdown-content list-clear">
+                        <li class="dropdown-item"><a href="#">Noże</a></li>
+                        <li class="dropdown-item"><a href="#">Multitoole</a></li>
+                        <li class="dropdown-item"><a href="#">Zegarki</a></li>
+                        <li class="dropdown-item"><a href="#">Samoobrona</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% endblock %}
+
+
+
+
+<!--             Body               -->
+
+    <div class="content-main container-fluid padding-top-lg">
+        <div id="search" class="pull-right">
+                   
+        </div>
+        {% block body %}
+
+        {% endblock %}
+    </div>
+
+<!--             Footer               -->
+
+        <div class="footer">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Włóczęga.pl</h3>
+                    <ul class="list-clear">
+                        <li><span><a href="">Strona główna</a></span></li>
+                        <li><span><a href="">O nas</a></span></li>
+                        <li><span><a href="">Moje konto</a></span></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Informacje</h3>
+                        <ul class="list-clear">
+                        <li><span><a href="">Regulamin</a></span></li>
+                        <li><span><a href="">Polityka cookies</a></span></li>
+                        <li><span><a href="">Polityka prywatności</a></span></li>
+                        <li><span><a href="">Mapa sklepu</a></span></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Kategorie</h3>
+                    <ul class="list-clear">
+                        <li><span><a href="">Odzież</a></span></li>
+                        <li><span><a href="">Buty</a></span></li>
+                        <li><span><a href="">Sprzęt biwakowy</a></span></li>
+                        <li><span><a href="">Plecaki</a></span></li>
+                        <li><span><a href="">Latarki</a></span></li>
+                        <li><span><a href="">Żywność</a></span></li>
+                        <li><span><a href="">Akscesoria</a></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col col-md-12">
+                    <h3>Follow us!</h3>
+                    <ul class="list-clear">
+                        <li class="inline"><i class="icon-twitter-bird text-twitter"><a target="blank" href="https://twitter.com/"> twitter.com/włóczęga</a></i></li>
+                        <li class="inline"><i class="icon-facebook-rect text-facebook"><a target="blank" href="https://twitter.com/"> facebook.com/włóczęga</a></i></li>
+                        <li class="inline"><i class="icon-googleplus-rect text-gplus"><a target="blank" href="https://plus.google.com/"> plus.google.com/włóczęga</a></i></li>
+                        <li class="inline pull-right"><span> Logo: <a target="_blank" href="https://www.vexels.com/vectors/preview/125805/mountain-icon-set"> Mountain icon set </a> | Free vector by <a target="_blank" href="https://www.vexels.com/">Vexels</a></span><span> Fonts: <a target="_blank" href="http://fontello.com/">fontello.com</a></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        {% block javascripts %}{% endblock %}
+        
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- latest JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- JavaScript scripts -->
+        <script src="{{ asset('Scripts/scripts.js') }}" type="text/javascript"></script>
+
+    </body>
+</html>

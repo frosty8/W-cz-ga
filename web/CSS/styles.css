@@ -1,0 +1,218 @@
+body
+{
+	background-color: #ffffff;
+}
+/********************** Carousel ***********************/
+#customCarousel
+{
+	margin: auto;
+	max-width: 1200px;
+}
+#customCarousel .item
+{
+		height: 400px;
+}
+.slide-image
+{
+	background-repeat: no-repeat;
+	background-position: center top;
+	z-index: 100;
+
+}
+#slide0
+{
+	background-image: url(../img_theme/outdoor1.jpg);
+
+}
+#slide1
+{
+	background-image: url(../img_theme/outdoor2.jpg);
+
+}
+#slide2
+{
+	background-image: url(../img_theme/outdoor3.jpg);
+}
+.carousel-custom-caption
+{
+	font-weight: bold;
+}
+.text-dark
+{
+	color: #212132;
+}
+.text-light
+{
+	color: #33ff33;
+}
+.text-twitter
+{
+	color: #55acee;
+}
+.text-facebook
+{
+	color: #3b5998;
+}
+.text-gplus
+{
+	color: #dd4b39;
+}
+.list-clear
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.inline
+{
+	display: inline-block;
+	position: relative;
+}
+.margin-top-md
+{
+	margin-top: 30px;
+}
+.margin-top-lg
+{
+	margin-top: 100px;
+}
+.padding-top-lg
+{
+	padding-top: 100px;
+}
+/*********************** Unordered list - @stickyNav ***********************/
+.myNavbar
+{
+	height: 40px;
+	width: 100%;
+}
+/*********************** Hoverable navDivs - @stickyNav ***********************/
+.dropbtn
+{
+	background-color: #cdcdcd;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+	width: calc(100%/7);
+
+}
+.dropdown-content
+{
+	display: none;
+}
+.dropdown-item
+{
+	line-height: 30px;
+	width: inherit;
+	background-color: #e0e0e0;
+	text-align: left;
+}
+.dropbtn:hover
+{
+	background-color: #f1f1f1;
+}
+.dropdown-item > a
+{
+	text-decoration: none;
+	font-weight: bold;
+	color: #212132;
+}
+.dropdown-item:hover
+{
+	background-color: #ffffff;
+}
+#stickyNav
+{
+	margin-bottom: -50px;
+}
+.fixed
+{
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+}
+/*********************** Search widget-right ***********************/
+
+#search
+{
+	background-color: #ededed;
+	height: 100px;
+	width: 30%;
+	position: fixed;
+	top: 75px;
+	right: 0;
+	display: none;
+}
+/*********************** Page footer ***********************/
+
+.footer
+{
+	background-image: url(../img_theme/dark_wood.png);
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	color: #d1d1d1;
+	font-size: 17px;
+	padding: 10px;
+	overflow-x: hidden;
+	z-index: -100;
+}
+
+/*********************** Page content ***********************/
+	.content-main
+{
+		
+}
+
+/*********************** Media queries ***********************/
+@media (max-width: 768px){
+
+/********************** Carousel ***********************/
+	#customCarousel
+	{
+		margin: auto;
+		max-width: 640px;
+	}
+	#customCarousel .item
+	{
+		height: 100px;
+	}
+	#slide0, #slide1, #slide2
+	{
+		background-image: url(../img_theme/logo-lg.png);
+
+	}
+	.carousel-caption
+	{
+		display: none;
+	}
+/*********************** Unordered list - @stickyNav ***********************/
+	.myNavbar
+	{
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	.container-fluid
+	{
+		margin: 0;
+		padding: 0;
+	}
+	.dropbtn
+	{
+		line-height: 30px;
+		width: 100%;
+	}
+/*********************** Page footer ***********************/
+	.footer
+	{
+		font-size: 14px;
+	}
+/*********************** Search widget-right ***********************/
+	#search
+	{
+		display: none;
+	}
+}
